@@ -1,5 +1,7 @@
 # TeamProfile-Generator
 using the command line prompts, add team members to your team website
+This project is still under contruction, the most updated branch is the 
+DEVELOP branch.
 
 ## User Story
 AS A manager
