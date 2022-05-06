@@ -12,9 +12,9 @@
 const officeInfo = info =>  {   
   if (info){
     return `
-    <div>
+    <div class="card-body text-info">
     <h3>Office No:</h3>
-    <p>${info}</p>
+    <p class="card-text">${info}</p>
     </div>
     `;
   } else {
@@ -25,9 +25,9 @@ const officeInfo = info =>  {
 const githubInfo = info =>  {   
   if (info){
     return `
-    <div>
+    <div class="card-body text-info">
     <h3>Github Profile:</h3>
-    <p><a href="https://github.com/${info}" target="_blank">${info}</a></p>
+    <p class="card-text"><a href="https://github.com/${info}" target="_blank">${info}</a></p>
     </div>
     `;
   } else {
@@ -38,9 +38,9 @@ const githubInfo = info =>  {
 const schoolInfo = info =>  {   
   if (info){
     return `
-    <div>
+    <div class="card-body text-info">
     <h3>School Name:</h3>
-    <p>${info}</p>
+    <p class="card-text">${info}</p>
     </div>
     `;
   } else {
@@ -65,17 +65,17 @@ module.exports = teamData => {
 </head>
   <body>
     <header class="">
-      <h1 class="">My Team</h1>
+      <h1 class="jumbotron">My Team</h1>
     </header>
 
     <main class="d-flex justify-content-center">
           ${teamData.map(({name, role, id, email, office, github, school}) => {
                 return `
-              <div>
-                <h2>${name}</h2>
-                <h3>${generateLogo(role)} ${role}</h3>
-                <p>Employee ID: ${id}</p>
-                <p>Employee Email: ${email}</p>
+              <div class="card border-info mb-3">
+                <h2 class="card-header">${name}</h2>
+                <h3 class="card-title">${generateLogo(role)} ${role}</h3>
+                <p class="card-text">Employee ID: ${id}</p>
+                <p class="card-text">Employee Email: <a href="mailto:${email}">${email}</a></p>
 
                 ${officeInfo(office)}
                 ${githubInfo(github)}
@@ -90,4 +90,3 @@ module.exports = teamData => {
   </html>
   `;
 };
-

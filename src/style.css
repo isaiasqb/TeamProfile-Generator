@@ -1,3 +1,4 @@
-* {
-  outline: solid 1px orange;
+.card {
+  max-width: 16rem;
+  min-width: 12rem;
 }
