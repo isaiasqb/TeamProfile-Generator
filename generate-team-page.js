@@ -1,10 +1,10 @@
 const fs = require('fs');
 
-const team ="this is my team"
+
 
   // function for creating the html site
 const writeHtmlFile = content => {
-  fs.writeFile('./dist/testpage.html', team, err => {
+  fs.writeFile('./dist/testpage.html', content, err => {
     if(err) {
       console.log('Opps something happened!')
       return

@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const { copyCssFile, writeHtmlFile } = require('./generate-team-page');
+const generateTemplate = require('./team-template');
 
 //ask general questions about the employee
 const promptQuestions = (employees) => {
@@ -131,19 +132,19 @@ const promptQuestions = (employees) => {
 
 
 promptQuestions()
-    // .then(promptExtraInfo)
-//     .then(teamInfo => {
-//         return generatePage(portfolioData)
-//     })
+    .then(teamInfo => {
+        return generateTemplate(teamInfo)
+    })
 
-//     .then(pageHTML => {
-//         return writeFile(pageHTML);
-//     })
+    .then(teamTemplate => {
+        copyCssFile()
+        return writeHtmlFile(teamTemplate)
+    });
 
-//     .then(writeFileResponse => {
-//         console.log(writeFileResponse);
-//         return copyFile();
-//     })
+    // .then(writeFileResponse => {
+    //     console.log(writeFileResponse);
+    //     return copyFile();
+    // })
 
 //     .then(copyFileResponse => {
 //         console.log(copyFileResponse);
@@ -154,5 +155,4 @@ promptQuestions()
 //     })
 
 
-writeHtmlFile()
-copyCssFile()
+// writeHtmlFile()
