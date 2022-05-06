@@ -117,11 +117,11 @@ const promptQuestions = (employees) => {
     employees.push(employeeData);
 
     if (employeeData.confirmNext){
-        return promptQuestions(employees) //this calls the function again and prompts the project questions
+        return promptQuestions(employees) 
     } else {
         return employees;
     }
-});//end of inquirer prompt
+});
 };
 
 
@@ -141,18 +141,3 @@ promptQuestions()
         return writeHtmlFile(teamTemplate)
     });
 
-    // .then(writeFileResponse => {
-    //     console.log(writeFileResponse);
-    //     return copyFile();
-    // })
-
-//     .then(copyFileResponse => {
-//         console.log(copyFileResponse);
-//     })
-
-//     .catch(err => {
-//         console.log(err);
-//     })
-
-
-// writeHtmlFile()
