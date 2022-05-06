@@ -2,6 +2,8 @@ const inquirer = require('inquirer');
 const { copyCssFile, writeHtmlFile } = require('./generate-team-page');
 const generateTemplate = require('./team-template');
 
+const Employee = require('./lib/Employee');
+
 //ask general questions about the employee
 const promptQuestions = (employees) => {
 
@@ -123,10 +125,6 @@ const promptQuestions = (employees) => {
     }
 });
 };
-
-
-
-
 
 
 

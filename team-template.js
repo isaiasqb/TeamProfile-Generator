@@ -76,14 +76,14 @@ module.exports = teamData => {
                 <h3 class="card-title">${generateLogo(role)} ${role}</h3>
                 <p class="card-text">Employee ID: ${id}</p>
                 <p class="card-text">Employee Email: <a href="mailto:${email}">${email}</a></p>
-
+                <div class="card-body">
                 ${officeInfo(office)}
                 ${githubInfo(github)}
                 ${schoolInfo(school)}
-
+                </div>
               </div>
                 `;
-            })
+            }).join('')
           }
     </main>
   </body>
